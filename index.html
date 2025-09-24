@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>빛의 길을 따라 가는 사람들</title>
+
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    }
+
+    .card {
+      width: 55mm;
+      height: 85mm;
+      perspective: 1000px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background-size: cover;
+      background-position: center;
+      display: flex; 
+      align-items: center;   
+      justify-content: center; 
+      text-align: center;
+      padding: 8px;
+    }
+
+    .card-front {
+      background-image: url('images/front-4.png');
+      filter: brightness(0.95) contrast(1.1);
+    }
+
+    .card-back {
+      background-image: url('images/back-4.png');
+      filter: brightness(0.95) contrast(1.1);
+      transform: rotateY(180deg);
+    }
+
+    /* 글자 스타일 */
+    .card-text {
+      font-family: "Times New Roman","명조체", serif; 
+      font-size: 14px; 
+      color: #333; 
+      background: rgba(255, 255, 255, 0.6); 
+      padding: 6px 8px;
+      border-radius: 8px;
+      line-height: 1.6; 
+      max-width: 85%; 
+      overflow-wrap: break-word;
+    }
+
+    /* 뒷면 텍스트 배경 없애기 */
+    .card-back .card-text {
+      background: none;
+      padding: 0;
+    }
+
+    /* 강조 스타일 */
+    .highlight {
+      font-weight: bold;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <div class="card-inner">
+      <!-- 앞면 -->
+      <div class="card-face card-front">
+        <div class="card-text">
+          너희 염려를 다 <span class="highlight">주께 맡기라</span><br> 
+          이는 그가 너희를 돌보심이라.<br><br>
+          (벧전 5:7)
+        </div>
+      </div>
+
+      <!-- 뒷면 -->
+      <div class="card-face card-back">
+        <div class="card-text">
+          주님께 모든 걱정과<br> 
+          염려를 맡기며 걸어가는 당신,<br>
+          세상의 어려움 속에서도<br> 
+          하나님의 손길 안에서<br>
+          평안과 안식을<br> 
+          누리게 됩니다.<br><br>
+          우리의 삶을 주관하시며<br> 
+          돌보시는 하나님을 신뢰하며,<br>
+          담대하게 한 걸음씩 걸어가세요.<br><br>
+          하나님 안에서 마음을 맡길 때,<br>
+          어떤 상황 속에서도<br> 
+          흔들림 없는 평안을<br>
+          경험하게 됩니다.<br><br>
+          다음 장소의 힌트:<br>
+          목양관 2층 계단
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const card = document.getElementById('card');
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+  </script>
+</body>
+</html>
