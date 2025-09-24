@@ -65,13 +65,15 @@
     /* 글자 스타일 */
     .card-text {
       font-family: "Times New Roman","명조체", serif; 
-      font-size: 14px; 
+      font-size: 13px;       /* 글자 조금 줄임 */
       color: #333; 
       background: rgba(255, 255, 255, 0.6); 
       padding: 6px 8px;
       border-radius: 8px;
       line-height: 1.6; 
       max-width: 85%; 
+      max-height: 85%;      /* 카드 안에서 최대 높이 제한 */
+      overflow-y: auto;     /* 글자가 넘칠 경우 스크롤 */
       overflow-wrap: break-word;
     }
 
@@ -95,7 +97,7 @@
       <!-- 앞면 -->
       <div class="card-face card-front">
         <div class="card-text">
-          너희 염려를 다 <span class="highlight">주께 맡기라</span><br> 
+          너희 염려를 다 <span class="highlight">주께 맡기라</span>,<br> 
           이는 그가 너희를 돌보심이라.<br><br>
           (벧전 5:7)
         </div>
@@ -104,18 +106,13 @@
       <!-- 뒷면 -->
       <div class="card-face card-back">
         <div class="card-text">
-          주님께 모든 걱정과<br> 
-          염려를 맡기며 걸어가는 당신,<br>
-          세상의 어려움 속에서도<br> 
-          하나님의 손길 안에서<br>
-          평안과 안식을<br> 
-          누리게 됩니다.<br><br>
-          우리의 삶을 주관하시며<br> 
-          돌보시는 하나님을 신뢰하며,<br>
+          주님께 모든 걱정과 염려를 맡기며 걸어가는 당신,<br>
+          세상의 어려움 속에서도 하나님의 손길 안에서<br>
+          평안과 안식을 누리게 됩니다.<br><br>
+          우리의 삶을 주관하시며 돌보시는 하나님을 신뢰하며,<br>
           담대하게 한 걸음씩 걸어가세요.<br><br>
           하나님 안에서 마음을 맡길 때,<br>
-          어떤 상황 속에서도<br> 
-          흔들림 없는 평안을<br>
+          어떤 상황 속에서도 흔들림 없는 평안을<br>
           경험하게 됩니다.<br><br>
           다음 장소의 힌트:<br>
           목양관 2층 계단
